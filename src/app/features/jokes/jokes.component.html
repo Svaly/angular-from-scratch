@@ -1,2 +1,22 @@
-<p>jokes works!</p>
-<span>test style</span>
+<div class="container">
+  <p> {{displayedJoke}}</p>
+</div>
+
+<div *ngIf="displayedJoke else randomize">
+  <h1>Losowy kawał</h1>
+  <p> {{displayedJoke}}</p>
+</div>
+
+<ng-template #randomize>
+  <span>Please pres randomize button</span>
+</ng-template>
+
+<button (click)="randomizeJoke()">Losuj</button>
+
+<div *ngFor="let joke of jokesList">
+  {{joke}}
+</div>
+
+<div>
+  <span>Losowy kawał {{getRandomJoke()}}</span>
+</div>
