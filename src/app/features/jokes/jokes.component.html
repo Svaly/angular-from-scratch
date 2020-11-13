@@ -13,6 +13,14 @@
 
 <button (click)="randomizeJoke()">Losuj</button>
 
+<br>
+<br>
+<br>
+
+<input type="text" (change)="newJokeValueChanged($event.target.value)">
+
+<button (click)="addJoke()">Dodaj</button>
+
 <div *ngFor="let joke of jokesList">
   {{joke}}
 </div>
